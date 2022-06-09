@@ -1,15 +1,16 @@
 <template>
     <div>
-        <HomeComponent />
+        WorkingProgress
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-import HomeComponent from '../pages/HomeComponent.vue'
+
 export default{
     name: 'AppComponent',
     components:{
-        HomeComponent,
+
     }
 }
 </script>
