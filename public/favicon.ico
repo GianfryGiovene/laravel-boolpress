@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="155.48875"
+       y="349.16773"
+       width="35.462347"
+       height="55.921394"
+       id="rect8257" />
+  </defs>
+  <g
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text8255"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect8257)" />
+    <rect
+       style="fill:#ffff00;fill-rule:evenodd;stroke-width:0.264583"
+       id="rect9581"
+       width="39.335358"
+       height="39.696232"
+       x="63.513973"
+       y="56.657349"
+       ry="19.667679" />
+    <rect
+       style="fill:#ff0000;stroke-width:0.264583"
+       id="rect13687"
+       width="26.343864"
+       height="25.261238"
+       x="70.00972"
+       y="63.153099"
+       ry="12.630619"
+       rx="1.0826246" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.15116px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.228779"
+       x="63.21236"
+       y="79.115356"
+       id="text16422"
+       transform="scale(1.0012427,0.99875882)"><tspan
+         id="tspan16420"
+         style="stroke-width:0.228779"
+         x="63.21236"
+         y="79.115356">BoolBlog</tspan></text>
+  </g>
+</svg>
