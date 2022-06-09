@@ -3,7 +3,10 @@
         <div class="row">
             <div class="col-12 text-center">
                 Blog
-                <div :key='index' v-for="(post,index) in posts"></div>
+                <div class="border" :key='index' v-for="(post,index) in posts">
+                    <h2>{{post.title}}</h2>
+                    <p>{{post.content}}</p>
+                </div>
             </div>
         </div>
     </div>

@@ -1971,6 +1971,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'BlogComponent',
   data: function data() {
@@ -38372,7 +38375,11 @@ var render = function () {
         [
           _vm._v("\n            Blog\n            "),
           _vm._l(_vm.posts, function (post, index) {
-            return _c("div", { key: index })
+            return _c("div", { key: index, staticClass: "border" }, [
+              _c("h2", [_vm._v(_vm._s(post.title))]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(post.content))]),
+            ])
           }),
         ],
         2
