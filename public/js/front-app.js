@@ -37698,7 +37698,11 @@ var render = function () {
       _c(
         "div",
         { staticClass: "col-12 text-center" },
-        [_c("router-link", { attrs: { to: "home" } })],
+        [
+          _c("router-link", { attrs: { to: { name: "home" } } }, [
+            _vm._v("Back to Home"),
+          ]),
+        ],
         1
       ),
     ]),

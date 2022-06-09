@@ -6,7 +6,7 @@
             </div>
             <div class="col-12 text-center">
                 <!-- ci permette di definire dove mandare l'utente quando viene cliccato -->
-                <router-link :to="'home'"></router-link>
+                <router-link :to="{name: 'home'}">Back to Home</router-link>
             </div>
         </div>
     </div>
