@@ -21,8 +21,8 @@ const router = new VueRouter({
             name: 'contacts',
             component: ContactsComponent
         },
-        // rotta per risorsa inesistente
         {
+            // rotta per risorsa inesistente
             path: '/*',
             name: 'notFound',
             component: NotFoundComponent

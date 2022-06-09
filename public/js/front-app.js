@@ -1991,6 +1991,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'NotFoundComponent'
 });
@@ -37685,22 +37689,22 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 text-center" }, [
-          _vm._v("\n            404 - NOT FOUND\n        "),
-        ]),
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 text-center" }, [
+        _vm._v("\n            404 - NOT FOUND\n        "),
       ]),
-    ])
-  },
-]
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 text-center" },
+        [_c("router-link", { attrs: { to: "home" } })],
+        1
+      ),
+    ]),
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -53491,8 +53495,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: '/contacts',
     name: 'contacts',
     component: _pages_ContactsComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }, // rotta per risorsa inesistente
-  {
+  }, {
+    // rotta per risorsa inesistente
     path: '/*',
     name: 'notFound',
     component: _pages_NotFoundComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
