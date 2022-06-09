@@ -18,9 +18,9 @@ class CategoryController extends Controller
         $categories = Category::all();
         // $posts = Post::paginate(1);
 
-        $result = ['result'=>$categories,'success'=>true];
+        $results = ['result'=>$categories,'success'=>true];
 
-        return response()->json($result);
+        return response()->json($results);
     }
 
     /**

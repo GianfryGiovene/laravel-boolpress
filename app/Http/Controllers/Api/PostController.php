@@ -21,9 +21,9 @@ class PostController extends Controller
 
         // $posts = Post::with('category')->get(); (così aggancio direttamente alle category)
 
-        $result = ['result'=>$posts,'success'=>true];
+        $results = ['result'=>$posts,'success'=>true];
 
-        return response()->json($result);
+        return response()->json($results);
     }
 
     /**
