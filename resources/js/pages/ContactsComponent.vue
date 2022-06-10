@@ -3,6 +3,8 @@
         <div class="row">
             <div class="col-12 text-center">
                 Contacts
+                <div>Name: Pinco Pallo</div>
+                <div>Nationality: Burundi</div>
             </div>
         </div>
     </div>

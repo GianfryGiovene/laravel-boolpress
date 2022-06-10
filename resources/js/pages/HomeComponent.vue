@@ -3,6 +3,8 @@
         <div class="row">
             <div class="col-12 text-center">
                 Homee
+
+                <div>Welcome in BoolPost</div>
             </div>
         </div>
     </div>
