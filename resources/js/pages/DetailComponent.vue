@@ -15,8 +15,8 @@ export default {
     },
     mounted(){
         // recupero id con:
-        const id = this.$route.params.id;
-        window.axios.get('http://127.0.0.1:8000/api/posts/' + id)
+        const slug = this.$route.params.slug;
+        window.axios.get('http://127.0.0.1:8000/api/posts/' + slug)
         .then(({status, data})=>{
             console.log('data?', data)
             if(status === 200 && data.success)

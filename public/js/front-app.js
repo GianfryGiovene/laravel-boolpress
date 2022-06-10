@@ -2125,8 +2125,8 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // recupero id con:
-    var id = this.$route.params.id;
-    window.axios.get('http://127.0.0.1:8000/api/posts/' + id).then(function (_ref) {
+    var slug = this.$route.params.slug;
+    window.axios.get('http://127.0.0.1:8000/api/posts/' + slug).then(function (_ref) {
       var status = _ref.status,
           data = _ref.data;
       console.log('data?', data);
@@ -38436,7 +38436,9 @@ var render = function () {
         _vm._v(" "),
         _c(
           "router-link",
-          { attrs: { to: { name: "detail", params: { id: _vm.post.id } } } },
+          {
+            attrs: { to: { name: "detail", params: { slug: _vm.post.slug } } },
+          },
           [_vm._v(" DETTAGLIO ")]
         ),
       ],
@@ -54880,7 +54882,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'contacts',
     component: _pages_ContactsComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: '/blog/:id',
+    path: '/blog/:slug',
     name: 'detail',
     component: _pages_DetailComponent__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
