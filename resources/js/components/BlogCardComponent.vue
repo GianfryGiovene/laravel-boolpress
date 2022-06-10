@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <div class="border" :key='post.id' v-for="post in posts">
+    <div class="container">
+        <div class="row justify-content-between">
             <h2>{{post.title}}</h2>
-            <p>{{post.content}}</p>
+            <router-link :to="{ name: 'detail', params:{ id: post.id } }"> DETTAGLIO </router-link>
         </div>
     </div>
 </template>
@@ -11,7 +11,7 @@
 export default {
     name:'BlogCardComponent',
     props:{
-        posts:Array,
+        post:Object,
     }
 
 }

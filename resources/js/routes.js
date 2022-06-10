@@ -8,6 +8,7 @@ import HomeComponent from './pages/HomeComponent'
 import BlogComponent from './pages/BlogComponent'
 import ContactsComponent from './pages/ContactsComponent'
 import NotFoundComponent from './pages/NotFoundComponent'
+import DetailComponent from './pages/DetailComponent'
 
 
 
@@ -28,6 +29,11 @@ const router = new VueRouter({
             path: '/contacts',
             name: 'contacts',
             component: ContactsComponent
+        },
+        {
+            path: '/blog/:id',
+            name: 'detail',
+            component: DetailComponent
         },
         {
             // rotta per risorsa inesistente

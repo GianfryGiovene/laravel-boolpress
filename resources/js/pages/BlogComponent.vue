@@ -3,7 +3,11 @@
         <div class="row">
             <div class="col-12 text-center">
                 Blog
-                <BlogCardComponent :posts="posts" />
+                <div class="border " :key='post.id' v-for="post in posts">
+                    <div v-if="post">
+                        <BlogCardComponent :post="post" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
