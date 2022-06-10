@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // esponiamo solo un percorso per la lettura ma senza possibilità di modifica
 Route::get('/posts', 'Api\PostController@index')->name('posts.index');
-Route::get('/posts/{id}', 'Api\PostController@show')->name('posts.show');
+Route::get('/posts/{post}', 'Api\PostController@show')->name('posts.show');
 
 Route::get('/categories', 'Api\CategoryController@index')->name('categories.index');
 Route::get('/categories/{post}', 'Api\CategoryController@show')->name('categories.show');

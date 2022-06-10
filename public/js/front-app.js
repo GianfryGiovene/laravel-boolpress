@@ -2118,7 +2118,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'DetailComponent',
   data: function data() {
     return {
-      post: undefined
+      post: {}
     };
   },
   mounted: function mounted() {
@@ -2129,6 +2129,7 @@ __webpack_require__.r(__webpack_exports__);
     window.axios.get('http://127.0.0.1:8000/api/posts/' + id).then(function (_ref) {
       var status = _ref.status,
           data = _ref.data;
+      console.log('data?', data);
       if (status === 200 && data.success) _this.post = data.result;
       console.log(_this.post);
     })["catch"](function (e) {
@@ -38641,7 +38642,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    ciao sono dettaglio\n")])
+  return _c("div", [_c("h2", [_vm._v(_vm._s(_vm.post.title))])])
 }
 var staticRenderFns = []
 render._withStripped = true
