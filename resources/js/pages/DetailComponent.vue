@@ -1,6 +1,11 @@
 <template>
-    <div>
-        <h2>{{ post.title }}</h2>
+    <div class="container">
+        <div class="col-12 text-center">
+            <h2>{{ post.title }}</h2>
+        </div>
+        <p class="text-center">
+            {{post.content}}
+        </p>
     </div>
 </template>
 
