@@ -23,7 +23,8 @@
                                     @endif
                                 </div>
                                 <div class="row flex-column">
-                                    <form action="{{ route('admin.posts.store') }}" method="post">
+                                    <form action="{{ route('admin.posts.store') }}" method="post"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         {{-- category --}}
                                         <div class="row flex-column">
@@ -73,6 +74,11 @@
                                             @error('content')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
+                                        </div>
+                                        {{-- image upload --}}
+                                        <div>
+                                            <label for="image">Immagine di Copertina</label>
+                                            <input type="file" name="image" />
                                         </div>
                                 </div>
                                 <div class="mt-3">
