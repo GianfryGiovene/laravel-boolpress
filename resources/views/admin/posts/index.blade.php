@@ -28,6 +28,9 @@
                                         <td>
                                             @foreach ($post->tags as $tag)
                                                 <span>{{ $tag->name }}</span>
+                                                @if ($tag->id < count($post->tags))
+                                                    <span>-</span>
+                                                @endif
                                             @endforeach
                                         </td>
                                         <td>
@@ -46,16 +49,12 @@
                                         </td>
                                     </tr>
                                 @endforeach
-
-
-
                             </table>
-
+                            <a href="/admin">Back</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="/admin">Back</a>
     </div>
 @endsection
