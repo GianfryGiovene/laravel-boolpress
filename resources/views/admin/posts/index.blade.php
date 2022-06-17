@@ -22,7 +22,10 @@
                                 @foreach ($posts as $post)
                                     <tr>
                                         <td>{{ $post->id }}</td>
-                                        <td><a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->title }}</a>
+                                        <td><a class="text-decoration-none "
+                                                href="{{ route('admin.posts.show', $post->id) }}">
+                                                <h4>{{ $post->title }}</h4>
+                                            </a>
                                         </td>
                                         <td>{{ $post->category->name }}</td>
                                         <td>

@@ -17,23 +17,23 @@
                                 <div>{{ $post->slug }}</div>
                             </div>
                             {{-- image --}}
-                            <div class="col-12">
+                            <div class="col-12 border-bottom pb-2">
                                 <img class="w-100" src="{{ asset('storage/' . $post->image_cover) }}" alt="">
                             </div>
                             {{-- content --}}
-                            <div>
-                                <p class="border">{{ $post->content }}</p>
+                            <div class="mt-2">
+                                <p>{{ $post->content }}</p>
                             </div>
 
                             <div>
                                 {{-- category --}}
                                 <div class="row mr-4">
-                                    <h5 class="mr-1">Category:</h5>
+                                    <h6 class="mr-1">Category:</h6>
                                     <span>{{ $post->category->name }}</span>
                                 </div>
                                 {{-- tags --}}
                                 <dd class="row">
-                                    <h5 class="mr-1">Tags:</h5>
+                                    <h6 class="mr-1">Tags:</h6>
                                     @foreach ($post->tags as $tag)
                                         <span>{{ $tag->name }}</span>
                                         @if ($tag->id < count($post->tags))

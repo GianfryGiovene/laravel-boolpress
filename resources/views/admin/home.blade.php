@@ -16,7 +16,7 @@
                         <div>
                             {{ __('You are logged in!') }}
                         </div>
-                        <a href="admin/posts">Vai a Posts</a>
+                        <a class="btn btn-success" href="admin/posts">Vai a Posts</a>
                     </div>
                 </div>
             </div>
