@@ -23,7 +23,8 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <form action="{{ route('admin.posts.update', $post->id) }}" method="post">
+                                    <form action="{{ route('admin.posts.update', $post->id) }}" method="post"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
 
@@ -72,6 +73,11 @@
                                             @error('content')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
+                                        </div>
+                                        {{-- image upload --}}
+                                        <div>
+                                            <label for="image-cover">Immagine di Copertina</label>
+                                            <input type="file" name="image-cover" />
                                         </div>
                                 </div>
                                 <div class="mt-3">

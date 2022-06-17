@@ -13,11 +13,14 @@
                             </div>
                         @endif
 
-                        {{ __('You are logged in!') }}
+                        <div>
+                            {{ __('You are logged in!') }}
+                        </div>
+                        <a href="admin/posts">Vai a Posts</a>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="admin/posts">Vai a Posts</a>
+
     </div>
 @endsection
