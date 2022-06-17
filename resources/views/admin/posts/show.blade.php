@@ -6,31 +6,46 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="container">
+                        {{-- title --}}
                         <div class="card-header row justify-content-between">
-                            <div>{{ $post->title }}</div>
-
+                            <h2>{{ $post->title }}</h2>
                         </div>
                         <div class="card-body">
+                            {{-- slug --}}
                             <div class="row">
-                                <div>
-                                    <p>{{ $post->content }}</p>
-                                    <span>Category: {{ $post->category->name }}</span>
-                                    <h5>Slug:</h5>
-                                    <div>{{ $post->slug }}</div>
-                                    <dd>
-                                        @foreach ($post->tags as $tag)
-                                            <span>{{ $tag->name }}</span>
-                                        @endforeach
-                                    </dd>
-                                    <div>
-                                        <a href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
-                                        <a href="">Delete</a>
-                                        <a href="{{ route('admin.posts.index') }}">Back</a>
-                                    </div>
+                                <h5 class="mr-2">Slug: </h5>
+                                <div>{{ $post->slug }}</div>
+                            </div>
+                            {{-- image --}}
+                            <div class="col-12">
+                                <img class="w-100" src="{{ asset('storage/' . $post->image_cover) }}" alt="">
+                            </div>
+                            {{-- content --}}
+                            <div>
+                                <p class="border">{{ $post->content }}</p>
+                            </div>
+
+                            <div>
+                                {{-- category --}}
+                                <div class="row mr-4">
+                                    <h5 class="mr-1">Category:</h5>
+                                    <span>{{ $post->category->name }}</span>
                                 </div>
-                                <div>
-                                    <img src="{{ asset('storage/' . $post->cover_image) }}" alt="">
-                                </div>
+                                {{-- tags --}}
+                                <dd class="row">
+                                    <h5 class="mr-1">Tags:</h5>
+                                    @foreach ($post->tags as $tag)
+                                        <span>{{ $tag->name }}</span>
+                                        @if ($tag->id < count($post->tags))
+                                            <span>-</span>
+                                        @endif
+                                    @endforeach
+                                </dd>
+                            </div>
+                            <div>
+                                <a class="btn btn-success" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
+                                <a class="btn btn-danger" href="">Delete</a>
+                                <a class="btn btn-dark" href="{{ route('admin.posts.index') }}">Back</a>
                             </div>
                         </div>
                     </div>

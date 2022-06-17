@@ -52,7 +52,7 @@ class PostController extends Controller
             'content'=>'required|min:5',
             'category_id'=>'exists:categories,id',
             'tags'=>'exists:tags,id',
-            'image'=>'nullable|image'
+            'image_cover'=>'nullable|image'
         ],
         // messaggi di errori nel caso condizioni sopra nn verificate
         [
@@ -61,13 +61,13 @@ class PostController extends Controller
             'content.min'=>'Non hai inserito sufficienti caratteri',
             'category_id.exist'=>'Categoria selezionata non esiste',
             'tags'=>'Tag non esiste',
-            'image'=>'Non è un\'immagine'
+            'image_cover'=>'Non è un\'immagine'
         ]);
         $postData = $request->all();
         // upload image control
-        if(array_key_exists('image-cover', $postData)){
-            $img_path = Storage::put('uploads', $postData['image-cover']);
-            $postData['image-cover']=$img_path;
+        if(array_key_exists('image_cover', $postData)){
+            $img_path = Storage::put('uploads', $postData['image_cover']);
+            $postData['image_cover']=$img_path;
         }
 
         $newPost = new Post();
@@ -132,7 +132,7 @@ class PostController extends Controller
             'content'=>'required|min:5',
             'category_id'=>'exists:categories,id',
             'tags'=>'exists:tags,id',
-            'image'=>'nullable|image'
+            'image_cover'=>'nullable|image'
         ],
         // messaggi di errori nel caso condizioni sopra nn verificate
         [
@@ -141,15 +141,15 @@ class PostController extends Controller
             'content.min'=>'Non hai inserito sufficienti caratteri',
             'category_id.exist'=>'Categoria selezionata non esiste',
             'tags'=>'Tag non esiste',
-            'image'=>'Non è un\'immagine'
+            'image_cover'=>'Non è un\'immagine'
         ]);
 
         $postData = $request->all();
         // upload image control
-        if(array_key_exists('image-cover', $postData)){
+        if(array_key_exists('image_cover', $postData)){
             Storage::delete($post->image_cover);
-            $img_path = Storage::put('uploads', $postData['image-cover']);
-            $postData['image-cover']=$img_path;
+            $img_path = Storage::put('uploads', $postData['image_cover']);
+            $postData['image_cover']=$img_path;
         }
 
         $post->fill($postData);
@@ -178,6 +178,9 @@ class PostController extends Controller
         //
         if($post){
             $post->tags()->sync([]);
+            if(array_key_exists('image-cover', $postData)){
+                Storage::delete($post->image_cover);
+            }
             $post->delete();
         }
 
