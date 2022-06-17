@@ -77,8 +77,8 @@
                                         </div>
                                         {{-- image upload --}}
                                         <div>
-                                            <label for="image">Immagine di Copertina</label>
-                                            <input type="file" name="image" />
+                                            <label for="image-cover">Immagine di Copertina</label>
+                                            <input type="file" name="image-cover" />
                                         </div>
                                 </div>
                                 <div class="mt-3">

@@ -51,7 +51,8 @@ class PostController extends Controller
             'title'=> 'required|max:250',
             'content'=>'required|min:5',
             'category_id'=>'exists:categories,id',
-            'tags'=>'exists:tags,id'
+            'tags'=>'exists:tags,id',
+            'image'=>'nullable|image'
         ],
         // messaggi di errori nel caso condizioni sopra nn verificate
         [
@@ -59,12 +60,18 @@ class PostController extends Controller
             'title.max'=>'Hai superato i 250 caratteri',
             'content.min'=>'Non hai inserito sufficienti caratteri',
             'category_id.exist'=>'Categoria selezionata non esiste',
-            'tags'=>'Tag non esiste'
+            'tags'=>'Tag non esiste',
+            'image'=>'Non è un\'immagine'
         ]);
         $postData = $request->all();
+
+        if(array_key_exists('image-cover', $postData)){
+            $img_path = Storage::put('uploads', $postData['image-cover']);
+            $postData['image-cover']=$img_path;
+        }
+
         $newPost = new Post();
         $newPost->fill($postData);
-        $img_path = Storage::put('uploads', $data['image']);
         $newPost->slug= Post::convertToSlug($newPost->title);
         // add tags
         $newPost->save();
