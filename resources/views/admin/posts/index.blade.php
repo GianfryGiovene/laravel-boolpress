@@ -34,15 +34,16 @@
                                             @endforeach
                                         </td>
                                         <td>
-                                            <div>
-                                                <a href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
+                                            <div class="row">
+                                                <a class="btn btn-success mr-2"
+                                                    href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
 
                                                 <div>
                                                     <form action="{{ route('admin.posts.destroy', $post->id) }}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit">DELETE</button>
+                                                        <button class="btn btn-danger" type="submit">DELETE</button>
                                                     </form>
                                                 </div>
                                             </div>
