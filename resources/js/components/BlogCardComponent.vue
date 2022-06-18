@@ -1,8 +1,7 @@
 <template>
     <div class="container">
         <div class="row justify-content-between">
-            <h2>{{post.title}}</h2>
-            <router-link :to="{ name: 'detail', params:{ slug: post.slug } }"> DETTAGLIO </router-link>
+            <router-link class="text-decoration-none text-dark" :to="{ name: 'detail', params:{ slug: post.slug } }"><h2>{{post.title}}</h2></router-link>
         </div>
     </div>
 </template>
@@ -17,6 +16,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    div.container{
 
+    }
 </style>

@@ -50,13 +50,14 @@
                                             {{-- tags --}}
                                             <div class="flex-column">
                                                 <label for="tags">Tags: </label>
-                                                @foreach ($tags as $tag)
-                                                    <div class="row align-items-center">
+                                                <div class="row align-items-center">
+                                                    @foreach ($tags as $tag)
                                                         <input type="checkbox" value="{{ $tag->id }}" name="tags[]"
+                                                            class=" ml-2"
                                                             {{ in_array($tag->id, old('tags', [])) ? 'checked' : '' }} />
-                                                        <div class="form-check-label">{{ $tag->name }}</div>
-                                                    </div>
-                                                @endforeach
+                                                        <div class="form-check-label ml-1">{{ $tag->name }}</div>
+                                                    @endforeach
+                                                </div>
                                                 @error('tags')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
@@ -85,16 +86,16 @@
                                             <label for="image_cover">Immagine di Copertina</label>
                                             <input type="file" name="image_cover" />
                                         </div>
+
+                                        <div class="mt-3">
+                                            <button class="btn btn-success" type="submit">Edit</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="mt-3">
-                                    <button class="btn btn-success" type="submit">Edit</button>
-                                </div>
-                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
