@@ -1916,6 +1916,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'BlogCardComponent',
   props: {
@@ -2048,6 +2050,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'BlogComponent',
@@ -2056,19 +2066,39 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      currentPage: 1,
+      lastPage: undefined,
+      prevPageLink: undefined,
+      nextPageLink: undefined
     };
   },
   mounted: function mounted() {
-    var _this = this;
+    this.loadPage('http://127.0.0.1:8000/api/posts');
+  },
+  methods: {
+    loadPage: function loadPage(url) {
+      var _this = this;
 
-    window.axios.get('http://127.0.0.1:8000/api/posts').then(function (_ref) {
-      var status = _ref.status,
-          data = _ref.data;
-      if (status === 200 && data.success) _this.posts = data.result;
-    })["catch"](function (e) {
-      return console.log(e);
-    });
+      window.axios.get(url).then(function (_ref) {
+        var status = _ref.status,
+            data = _ref.data;
+        if (status === 200 && data.success) _this.posts = data.result.data;
+        _this.currentPage = data.result.current_page;
+        _this.lastPage = data.result.last_page;
+        _this.prevPageLink = data.result.prev_page_url;
+        _this.nextPageLink = data.result.next_page_url;
+        console.log(data.result);
+      })["catch"](function (e) {
+        return console.log(e);
+      });
+    },
+    prevPage: function prevPage() {
+      this.loadPage(this.prevPageLink);
+    },
+    nextPage: function nextPage() {
+      this.loadPage(this.nextPageLink);
+    }
   }
 });
 
@@ -38716,7 +38746,8 @@ var render = function () {
         "div",
         { staticClass: "col-12 text-center" },
         [
-          _vm._v("\n            Blog\n            "),
+          _c("h1", [_vm._v("Blog")]),
+          _vm._v(" "),
           _vm._l(_vm.posts, function (post) {
             return _c("div", { key: post.id, staticClass: "border " }, [
               post
@@ -38725,9 +38756,49 @@ var render = function () {
                     [_c("BlogCardComponent", { attrs: { post: post } })],
                     1
                   )
-                : _vm._e(),
+                : _c("div", [
+                    _vm._v(
+                      "\n                    Caricamento in corso\n                "
+                    ),
+                  ]),
             ])
           }),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-2" }, [
+            _vm.prevPageLink
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-dark",
+                    on: {
+                      click: function ($event) {
+                        return _vm.prevPage()
+                      },
+                    },
+                  },
+                  [_vm._v("Prev")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.currentPage))]),
+            _vm._v(" / "),
+            _c("span", [_vm._v(_vm._s(_vm.lastPage))]),
+            _vm._v(" "),
+            _vm.nextPageLink
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-dark",
+                    on: {
+                      click: function ($event) {
+                        return _vm.nextPage()
+                      },
+                    },
+                  },
+                  [_vm._v("Next")]
+                )
+              : _vm._e(),
+          ]),
         ],
         2
       ),

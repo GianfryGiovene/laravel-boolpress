@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
+        $posts = Post::paginate(3);
         // $posts = Post::paginate(1);
 
         // $posts = Post::with('category')->get(); (così aggancio direttamente alle category)
