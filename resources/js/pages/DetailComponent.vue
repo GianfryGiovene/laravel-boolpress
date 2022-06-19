@@ -18,7 +18,7 @@
             </div>
             <div>
                 <h5>Category</h5>
-                <span>{{ post.category.name }}</span>
+                <span>{{ post.category.slug }}</span>
             </div>
         </div>
 
@@ -31,7 +31,7 @@ export default {
 
     data(){
         return{
-            post: {}
+            post: {},
         }
     },
     mounted(){

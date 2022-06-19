@@ -51,7 +51,6 @@ export default {
                 this.lastPage= data.result.last_page;
                 this.prevPageLink = data.result.prev_page_url;
                 this.nextPageLink = data.result.next_page_url;
-                console.log(data.result);
                 }).catch(e=>console.log(e))
         },
         prevPage(){

@@ -2088,7 +2088,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.lastPage = data.result.last_page;
         _this.prevPageLink = data.result.prev_page_url;
         _this.nextPageLink = data.result.next_page_url;
-        console.log(data.result);
       })["catch"](function (e) {
         return console.log(e);
       });
@@ -38899,7 +38898,7 @@ var render = function () {
       _c("div", [
         _c("h5", [_vm._v("Category")]),
         _vm._v(" "),
-        _c("span", [_vm._v(_vm._s(_vm.post.category.name))]),
+        _c("span", [_vm._v(_vm._s(_vm.post.category.slug))]),
       ]),
     ]),
   ])
