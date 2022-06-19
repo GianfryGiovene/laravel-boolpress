@@ -178,7 +178,7 @@ class PostController extends Controller
         //
         if($post){
             $post->tags()->sync([]);
-            if(array_key_exists('image-cover', $postData)){
+            if(isset($post['image_cover'])){
                 Storage::delete($post->image_cover);
             }
             $post->delete();

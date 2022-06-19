@@ -42,9 +42,15 @@
                                     @endforeach
                                 </dd>
                             </div>
-                            <div>
+                            <div class="row ">
                                 <a class="btn btn-success" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
-                                <a class="btn btn-danger" href="">Delete</a>
+                                <div class="mx-2">
+                                    <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">DELETE</button>
+                                    </form>
+                                </div>
                                 <a class="btn btn-dark" href="{{ route('admin.posts.index') }}">Back</a>
                             </div>
                         </div>

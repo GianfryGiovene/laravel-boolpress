@@ -1,12 +1,7 @@
 <template>
     <header class="container ">
-        <div class="container row align-items-center justify-content-between">
-            <div class="col-3">
-                <img id="logo" src="assets/logo-boolpress.jpg" alt="">
-            </div>
-            <div class="p-2">
-                <NavBarComponent  :headerNav="navBar" />
-            </div>
+        <div class="row justify-content-center align-items-center col-12 ">
+            <NavBarComponent  :headerNav="navBar" />
         </div>
     </header>
 </template>
@@ -42,10 +37,6 @@ export default {
 
 <style lang='scss' scoped>
 header{
-    max-height: 80px;
-    border-bottom: 1px solid red;
-    #logo{
-        width: 100px;
-    }
+    border-bottom: 2px solid red;
 }
 </style>

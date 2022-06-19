@@ -3,26 +3,28 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div v-if="success" class="alert alert-success" role="alert">
-                    Messaggio inviato correttamente
+                    Message sent
                 </div>
+                <h2>Write us a email</h2>
                 <form method="post" @submit.prevent="sendForm()">
-                    <div>
-                        <label for="email">email</label>
-                        <input v-model="email" type="email" name="email"/>
-                        <!-- errors -->
-                        <div v-if="errors && errors.email" >
-                            <ul>
-                                <li v-for="(errorText,index) in errors.email" :key="'error_name_' + index">
-                                    {{errorText}}
-                                </li>
-                            </ul>
+                    <div class="row mt-2">
+                        <div>
+                            <label for="email">email</label>
+                            <input v-model="email" type="email" name="email"/>
+                            <!-- errors -->
+                            <div v-if="errors && errors.email" >
+                                <ul>
+                                    <li v-for="(errorText,index) in errors.email" :key="'error_name_' + index">
+                                        {{errorText}}
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label for="name">Name</label>
-                        <input v-model="name" type="text" name="name"/>
-                        <!-- errors -->
-                        <div v-if="errors && errors.name" >
+                        <div>
+                            <label for="name">Name</label>
+                            <input v-model="name" type="text" name="name"/>
+                            <!-- errors -->
+                            <div v-if="errors && errors.name" >
                             <ul>
                                 <li v-for="(errorText,index) in errors.name" :key="'error_name_' + index">
                                     {{errorText}}
@@ -30,9 +32,11 @@
                             </ul>
                         </div>
                     </div>
-                    <div>
+                    </div>
+                    <div class="flex-column">
                         <label for="message">message</label>
-                        <textarea v-model="message" name="message"></textarea>
+                        <textarea class="col-12" v-model="message" name="message"></textarea>
+                        <!-- errors -->
                         <div v-if="errors && errors.message" >
                             <ul>
                                 <li v-for="(errorText,index) in errors.message" :key="'error_name_' + index">

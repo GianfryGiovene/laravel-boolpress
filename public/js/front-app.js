@@ -1945,11 +1945,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'HeaderComponent',
@@ -1983,6 +1978,25 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2112,6 +2126,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -6724,7 +6742,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-153bfd55] {\n  max-height: 80px;\n  border-bottom: 1px solid red;\n}\nheader #logo[data-v-153bfd55] {\n  width: 100px;\n}", ""]);
+exports.push([module.i, "header[data-v-153bfd55] {\n  border-bottom: 2px solid red;\n}", ""]);
 
 // exports
 
@@ -38698,34 +38716,13 @@ var render = function () {
   return _c("header", { staticClass: "container " }, [
     _c(
       "div",
-      {
-        staticClass: "container row align-items-center justify-content-between",
-      },
-      [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "p-2" },
-          [_c("NavBarComponent", { attrs: { headerNav: _vm.navBar } })],
-          1
-        ),
-      ]
+      { staticClass: "row justify-content-center align-items-center col-12 " },
+      [_c("NavBarComponent", { attrs: { headerNav: _vm.navBar } })],
+      1
     ),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-3" }, [
-      _c("img", {
-        attrs: { id: "logo", src: "assets/logo-boolpress.jpg", alt: "" },
-      }),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -38748,31 +38745,100 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "ul",
-    { staticClass: "row list-unstyled" },
-    _vm._l(_vm.headerNav, function (item, index) {
-      return _c(
-        "li",
+    "nav",
+    { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "div",
         {
-          key: index,
-          staticClass: "px-2 mx-2 btn btn-primary align-self-center",
+          staticClass: "collapse navbar-collapse",
+          attrs: { id: "navbarSupportedContent" },
         },
         [
           _c(
-            "a",
-            {
-              staticClass: "text-decoration-none text-dark ",
-              attrs: { href: item.link },
-            },
-            [_vm._v(_vm._s(item.name))]
+            "ul",
+            { staticClass: "navbar-nav mr-auto" },
+            _vm._l(_vm.headerNav, function (item, index) {
+              return _c("li", { key: index, staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link", attrs: { href: item.link } },
+                  [_vm._v(_vm._s(item.name))]
+                ),
+              ])
+            }),
+            0
           ),
+          _vm._v(" "),
+          _vm._m(2),
         ]
-      )
-    }),
-    0
+      ),
+    ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navbar-brand col-2" }, [
+      _c("a", { attrs: { href: "/" } }, [
+        _c("img", {
+          staticClass: "w-100",
+          attrs: { id: "logo", src: "assets/logo-boolpress.jpg", alt: "" },
+        }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation",
+        },
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("form", { staticClass: "form-inline my-2 my-lg-0" }, [
+      _c("input", {
+        staticClass: "form-control mr-sm-2",
+        attrs: {
+          type: "search",
+          placeholder: "Search",
+          "aria-label": "Search",
+        },
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-outline-success my-2 my-sm-0",
+          attrs: { type: "submit" },
+        },
+        [_vm._v("Search")]
+      ),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -38912,13 +38978,11 @@ var render = function () {
           ? _c(
               "div",
               { staticClass: "alert alert-success", attrs: { role: "alert" } },
-              [
-                _vm._v(
-                  "\n                Messaggio inviato correttamente\n            "
-                ),
-              ]
+              [_vm._v("\n                Message sent\n            ")]
             )
           : _vm._e(),
+        _vm._v(" "),
+        _c("h2", [_vm._v("Write us a email")]),
         _vm._v(" "),
         _c(
           "form",
@@ -38932,93 +38996,95 @@ var render = function () {
             },
           },
           [
-            _c("div", [
-              _c("label", { attrs: { for: "email" } }, [_vm._v("email")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.email,
-                    expression: "email",
+            _c("div", { staticClass: "row mt-2" }, [
+              _c("div", [
+                _c("label", { attrs: { for: "email" } }, [_vm._v("email")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.email,
+                      expression: "email",
+                    },
+                  ],
+                  attrs: { type: "email", name: "email" },
+                  domProps: { value: _vm.email },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.email = $event.target.value
+                    },
                   },
-                ],
-                attrs: { type: "email", name: "email" },
-                domProps: { value: _vm.email },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.email = $event.target.value
-                  },
-                },
-              }),
+                }),
+                _vm._v(" "),
+                _vm.errors && _vm.errors.email
+                  ? _c("div", [
+                      _c(
+                        "ul",
+                        _vm._l(_vm.errors.email, function (errorText, index) {
+                          return _c("li", { key: "error_name_" + index }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(errorText) +
+                                "\n                                "
+                            ),
+                          ])
+                        }),
+                        0
+                      ),
+                    ])
+                  : _vm._e(),
+              ]),
               _vm._v(" "),
-              _vm.errors && _vm.errors.email
-                ? _c("div", [
-                    _c(
-                      "ul",
-                      _vm._l(_vm.errors.email, function (errorText, index) {
-                        return _c("li", { key: "error_name_" + index }, [
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(errorText) +
-                              "\n                            "
-                          ),
-                        ])
-                      }),
-                      0
-                    ),
-                  ])
-                : _vm._e(),
+              _c("div", [
+                _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.name,
+                      expression: "name",
+                    },
+                  ],
+                  attrs: { type: "text", name: "name" },
+                  domProps: { value: _vm.name },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.name = $event.target.value
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _vm.errors && _vm.errors.name
+                  ? _c("div", [
+                      _c(
+                        "ul",
+                        _vm._l(_vm.errors.name, function (errorText, index) {
+                          return _c("li", { key: "error_name_" + index }, [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(errorText) +
+                                "\n                            "
+                            ),
+                          ])
+                        }),
+                        0
+                      ),
+                    ])
+                  : _vm._e(),
+              ]),
             ]),
             _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.name,
-                    expression: "name",
-                  },
-                ],
-                attrs: { type: "text", name: "name" },
-                domProps: { value: _vm.name },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.name = $event.target.value
-                  },
-                },
-              }),
-              _vm._v(" "),
-              _vm.errors && _vm.errors.name
-                ? _c("div", [
-                    _c(
-                      "ul",
-                      _vm._l(_vm.errors.name, function (errorText, index) {
-                        return _c("li", { key: "error_name_" + index }, [
-                          _vm._v(
-                            "\n                                " +
-                              _vm._s(errorText) +
-                              "\n                            "
-                          ),
-                        ])
-                      }),
-                      0
-                    ),
-                  ])
-                : _vm._e(),
-            ]),
-            _vm._v(" "),
-            _c("div", [
+            _c("div", { staticClass: "flex-column" }, [
               _c("label", { attrs: { for: "message" } }, [_vm._v("message")]),
               _vm._v(" "),
               _c("textarea", {
@@ -39030,6 +39096,7 @@ var render = function () {
                     expression: "message",
                   },
                 ],
+                staticClass: "col-12",
                 attrs: { name: "message" },
                 domProps: { value: _vm.message },
                 on: {
